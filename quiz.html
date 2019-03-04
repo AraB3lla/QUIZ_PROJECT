@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <title>
+
+        </title>
+    </header>
+    <body>
+         
+       <script>
+
+           let quiz = [
+               {    title: "part1",
+                    question: "What colour are grape? ",
+                    choice: ["a) Pink", "b) Yellow" , "c) Orange", "d) Purple"],
+                    answer: "d"
+                 },
+                 {   title: "part2",
+                    question: "What colour are banana's?",
+                    choice: ["a) Orange", "b) Pink" , "c) Green","d) Yellow"],
+                    answer: "d",
+
+                 },
+                 {   title: "part3",              
+                    question: "What colour is the sun?",
+                    choice: ["a) Orange", "b) Red" , "c) Yellow","d) White"],
+                    answer: "d",
+
+                 },
+                 {   title: "part4",
+                    question: "What is the colour of the Ocean?",
+                    choice: ["a) Blue", "b) Turquious" , "c) Green", "d) Transparent"],
+                    answer: "d",
+
+                 },
+                 {   title: "part5",
+                    question: "What is the colour of a ruby?",
+                    choice: ["a) Pink", "b) Brown" , "c) Gold", "d) Red "],
+                    answer: "d",
+
+                 },
+                 {   title: "part6",
+                    question: "What is the colour of a Jasper?",
+                    choice: ["a) Orange", "b) Red" , "c) Black", "d) Green "],
+                    answer: "d",
+
+                 },
+                 {   title: "part7",
+                    question: "What is the colour of an emereld?",
+                    choice: ["a) Purple", "b) Orange" , "c) Pink", "d) Light Green "],
+                    answer: "d",
+
+                 },
+                 {   title: "part8",
+                    question: "What is the colour of a amethyst?",
+                    choice: ["a) Pink", "b) Green" , "c) Black", "d) Light Purple"],
+                    answer: "d",
+
+                 },
+                 {   title: "part9",
+                    question: " What is the colour of the sky?",
+                    choice: ["a) white", "b) Blue" , "c) Black", "d) Transparent "],
+                    answer: "d",
+
+                 },
+                 {   title: "part10",
+                    question: "What is the colour of a rip lemon?",
+                    choice: ["a) Green", "b) Orange" , "c) Pink", "d) Yellow "],
+                    answer: "d",
+
+                 },
+                 {   title: "part11",
+                    question: " What colour strawberries?",
+                    choice: ["a) Pink", "b) Yellow" , "c) Green", "d) Red"],
+                    answer: "d",
+
+                 },
+                 {   title: "part12",
+                    question: "Which animal has black and white stripes?",
+                    choice: ["a) Lion", "b) Kangaroo" , "c) Hippo", "d) Zebra"],
+                    answer: "d",
+
+                 },
+                 {   title: "part13",
+                    question: "What does red and blue make when mixed together?",
+                    choice: ["a) Orange", "b) Green" , "c) Black", "d) Purple"],
+                    answer: "d",
+
+                 },
+                 {   title: "part14",
+                    question: "What colour was Red Riding hoods coat?",
+                    choice: ["a) Pink", "b) Green" , "c) Orange", "d) Red"],
+                    answer: "d",
+
+                 },
+                 {   title: "part15",
+                    question: "WHta colour is elsa from Frozens hair?",
+                    choice: ["a) Blonde", "b) Black" , "c) White", "d) Orange"],
+                    answer: "d",
+
+                 },
+                 {   title: "part16",
+                    question: "Green is made up of which two colours?",
+                    choice: ["a) Red & blue", "b) Yellow & Red" , "c) Blue & Orange", "d) Yellow & Blue "],
+                    answer: "d",
+
+                 },
+                 {   title: "part17",
+                    question: " Which colour is the first in the rainbow?",
+                    choice: ["a) Pink", "b) Green" , "c) Blue", "d) Red"],
+                    answer: "d",
+
+                 },
+                 {   title: "part18",
+                    question: "What colour are a flamingo's feathers?",
+                    choice: ["a) Blue", "b) Red" , "c) Purple", "d) Pink"],
+                    answer: "d",
+
+                 },
+                 {   title: "part19",
+                    question: "What colour is often linked to love?",
+                    choice: ["a) Blue", "b) Black" , "c) Green", "d) Red"],
+                    answer: "d",
+
+                 },
+                 {   title: "part20",
+                    question: "What colour is the whatsapp logo?",
+                    choice: ["a) Blue", "b) Yellow" , "c) Red", "d) Green"],
+                    answer: "d",
+
+                 }
+                 ];
+     
+                  
+           for(let i = 0; i < quiz.length; i++){
+               var ques = document.createElement("h3");
+               ques.innerHTML = (quiz[i]).question;
+               document.body.appendChild(ques);
+
+               for(let x = 0; x < quiz[i].choice.length; x++){
+                    let radio = document.createElement("input");
+                 radio.setAttribute('type', 'radio');
+                 radio.setAttribute('name' ,quiz[i].title);
+                 radio.innerHTML = quiz[i].question;
+               document.body.appendChild(radio);
+
+               console.log(radio);
+
+               let options = document.createElement("div");
+                   options.innerHTML = quiz[i].choice[x];
+                   document.body.appendChild(options);
+       }
+       }
+            
+      let btn1 =  document.createElement("input");
+         btn1.setAttribute('type', 'button');
+         btn1.setAttribute('value', 'Calculate');
+         btn1.setAttribute('id', 'CalcScore');
+         document.body.appendChild(btn1);
+
+         document.getElementById("CalcScore").onclick = calc();
+
+function calc(answer){
+  for( let s = 0; s < quiz[s].length; s++){
+      for( let r = 0; r < quiz[s].choice[r].length; r++){
+         if(quiz[s].title.checked)
+         {let ch1 = quiz[s].answer;
+            console.log("correct");
+         } 
+         else 
+         console.log("incorrect");
+       }
+       }
+};
+       
+     
+               
+        </script>
+    </body>
+</html>
