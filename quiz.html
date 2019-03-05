@@ -11,12 +11,13 @@
     <body>
          
        <script>
-
+// array containing Question, options and answer
+let score = 0;
            let quiz = [
                {    title: "part1",
                     question: "What colour are grape? ",
                     choice: ["a) Pink", "b) Yellow" , "c) Orange", "d) Purple"],
-                    answer: "d"
+                    answer: "d) Purple"
                  },
                  {   title: "part2",
                     question: "What colour are banana's?",
@@ -129,53 +130,68 @@
                  {   title: "part20",
                     question: "What colour is the whatsapp logo?",
                     choice: ["a) Blue", "b) Yellow" , "c) Red", "d) Green"],
-                    answer: "d",
+                    answer: "d) Green",
 
                  }
                  ];
      
-                  
+        // loop for the questions          
            for(let i = 0; i < quiz.length; i++){
                var ques = document.createElement("h3");
                ques.innerHTML = (quiz[i]).question;
                document.body.appendChild(ques);
-
+//loop for the radio button
                for(let x = 0; x < quiz[i].choice.length; x++){
                     let radio = document.createElement("input");
                  radio.setAttribute('type', 'radio');
                  radio.setAttribute('name' ,quiz[i].title);
+                 radio.setAttribute('value' ,x);
                  radio.innerHTML = quiz[i].question;
                document.body.appendChild(radio);
 
-               console.log(radio);
-
+//variable name of the options
                let options = document.createElement("div");
                    options.innerHTML = quiz[i].choice[x];
                    document.body.appendChild(options);
        }
        }
-            
+            //variable for the calculation button
       let btn1 =  document.createElement("input");
          btn1.setAttribute('type', 'button');
          btn1.setAttribute('value', 'Calculate');
          btn1.setAttribute('id', 'CalcScore');
          document.body.appendChild(btn1);
 
-         document.getElementById("CalcScore").onclick = calc();
+         document.getElementById("CalcScore").onclick = calc;
+//function that was meant to loop the calculation for the correct answers
+function calc(){
 
-function calc(answer){
-  for( let s = 0; s < quiz[s].length; s++){
-      for( let r = 0; r < quiz[s].choice[r].length; r++){
-         if(quiz[s].title.checked)
-         {let ch1 = quiz[s].answer;
-            console.log("correct");
-         } 
-         else 
-         console.log("incorrect");
-       }
-       }
-};
-       
+test = document.getElementsByName("quiz[0].title");
+
+console.log(test);
+
+test2 = document.getElementsByName(quiz[19].title);
+console.log(test2);
+console.log(test2[1].checked);
+
+   console.log(quiz[0].choice[3]);
+   console.log(quiz[0].answer);
+
+
+ for( let s = 0; s < quiz[s].length; s++){
+ for( let r = 0; r < quiz[s].choice[r].length; r++){
+  let ans = document.getElementsByName(quiz[s].title);
+
+         if(ans.checked){
+         if(quiz[s].answer === quiz[s].choice[r].value){
+         score++;
+         console.log("correct");
+          }
+         console.log("ans");
+      }
+    }
+ }}
+   
      
                
         </script>
