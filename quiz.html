@@ -14,133 +14,82 @@
 // array containing Question, options and answer
 let score = 0;
            let quiz = [
-               {    title: "part1",
-                    question: "What colour are grape? ",
-                    choice: ["a) Pink", "b) Yellow" , "c) Orange", "d) Purple"],
-                    answer: "d) Purple"
-                 },
-                 {   title: "part2",
-                    question: "What colour are banana's?",
-                    choice: ["a) Orange", "b) Pink" , "c) Green","d) Yellow"],
-                    answer: "d",
-
-                 },
-                 {   title: "part3",              
-                    question: "What colour is the sun?",
-                    choice: ["a) Orange", "b) Red" , "c) Yellow","d) White"],
-                    answer: "d",
-
-                 },
-                 {   title: "part4",
-                    question: "What is the colour of the Ocean?",
-                    choice: ["a) Blue", "b) Turquious" , "c) Green", "d) Transparent"],
-                    answer: "d",
-
-                 },
-                 {   title: "part5",
-                    question: "What is the colour of a ruby?",
-                    choice: ["a) Pink", "b) Brown" , "c) Gold", "d) Red "],
-                    answer: "d",
-
-                 },
-                 {   title: "part6",
-                    question: "What is the colour of a Jasper?",
-                    choice: ["a) Orange", "b) Red" , "c) Black", "d) Green "],
-                    answer: "d",
-
-                 },
-                 {   title: "part7",
-                    question: "What is the colour of an emereld?",
-                    choice: ["a) Purple", "b) Orange" , "c) Pink", "d) Light Green "],
-                    answer: "d",
-
-                 },
-                 {   title: "part8",
-                    question: "What is the colour of a amethyst?",
-                    choice: ["a) Pink", "b) Green" , "c) Black", "d) Light Purple"],
-                    answer: "d",
-
-                 },
-                 {   title: "part9",
-                    question: " What is the colour of the sky?",
-                    choice: ["a) white", "b) Blue" , "c) Black", "d) Transparent "],
-                    answer: "d",
-
-                 },
-                 {   title: "part10",
-                    question: "What is the colour of a rip lemon?",
-                    choice: ["a) Green", "b) Orange" , "c) Pink", "d) Yellow "],
-                    answer: "d",
-
-                 },
-                 {   title: "part11",
-                    question: " What colour strawberries?",
-                    choice: ["a) Pink", "b) Yellow" , "c) Green", "d) Red"],
-                    answer: "d",
-
-                 },
-                 {   title: "part12",
-                    question: "Which animal has black and white stripes?",
-                    choice: ["a) Lion", "b) Kangaroo" , "c) Hippo", "d) Zebra"],
-                    answer: "d",
-
-                 },
-                 {   title: "part13",
-                    question: "What does red and blue make when mixed together?",
-                    choice: ["a) Orange", "b) Green" , "c) Black", "d) Purple"],
-                    answer: "d",
-
-                 },
-                 {   title: "part14",
-                    question: "What colour was Red Riding hoods coat?",
-                    choice: ["a) Pink", "b) Green" , "c) Orange", "d) Red"],
-                    answer: "d",
-
-                 },
-                 {   title: "part15",
-                    question: "WHta colour is elsa from Frozens hair?",
-                    choice: ["a) Blonde", "b) Black" , "c) White", "d) Orange"],
-                    answer: "d",
-
-                 },
-                 {   title: "part16",
-                    question: "Green is made up of which two colours?",
-                    choice: ["a) Red & blue", "b) Yellow & Red" , "c) Blue & Orange", "d) Yellow & Blue "],
-                    answer: "d",
-
-                 },
-                 {   title: "part17",
-                    question: " Which colour is the first in the rainbow?",
-                    choice: ["a) Pink", "b) Green" , "c) Blue", "d) Red"],
-                    answer: "d",
-
-                 },
-                 {   title: "part18",
-                    question: "What colour are a flamingo's feathers?",
-                    choice: ["a) Blue", "b) Red" , "c) Purple", "d) Pink"],
-                    answer: "d",
-
-                 },
-                 {   title: "part19",
-                    question: "What colour is often linked to love?",
-                    choice: ["a) Blue", "b) Black" , "c) Green", "d) Red"],
-                    answer: "d",
-
-                 },
-                 {   title: "part20",
-                    question: "What colour is the whatsapp logo?",
-                    choice: ["a) Blue", "b) Yellow" , "c) Red", "d) Green"],
-                    answer: "d) Green",
-
-                 }
+                  ["What colour are grape? ", "Pink", "Yellow" , "Orange", "Purple", "Purple"] 
+                 ,
+                  ["What colour are banana's?","Orange", "Pink" , "Green","Yellow","d"]
+                 ,              
+                  ["What colour is the sun?","Orange", "Red" , "Yellow","White","d"]
+                 ,   
+                  ["What is the colour of the Ocean?","Blue", "Turquious" , "Green", "Transparent","d"]
+                 ,
+                  ["What is the colour of a ruby?"," Pink", "Brown" , "Gold", "Red ","d"]
+                 ,
+                   ["What is the colour of a Jasper?","Orange", "Red" , "Black", "Green","d"]
+                 ,
+                  ["What is the colour of an emereld?","Purple", "Orange" , "Pink", "Light Green ","d"]
+                  ,
+                   ["What is the colour of a amethyst?","Pink", "Green" , "Black", "Light Purple","d",]
+                  ,
+                  [" What is the colour of the sky?","white", "Blue" , "Black", "Transparent","d"]
+                  ,
+                  ["What is the colour of a rip lemon?","Green", "Orange" , "Pink", "Yellow ","d"]
+                  ,
+                   ["What colour strawberries?","Pink", "Yellow" , "Green", "Red","d"]
+                  ,
+                   ["Which animal has black and white stripes?","Lion", "Kangaroo" , "Hippo", "Zebra","d"]
+                  ,
+                   ["What does red and blue make when mixed together?","Orange", "Green" , "Black", "Purple","d"]
+                  ,
+                  ["What colour was Red Riding hoods coat?","Pink", "Green" , "Orange", "Red","d"]
+                  ,
+                  ["Whatcolour is elsa from Frozens hair?","Blonde", "Black" , "White", "Orange","d"]
+                  ,
+                  ["Green is made up of which two colours?","Red & blue", "Yellow & Red" , "Blue & Orange", "Yellow & Blue","d"]
+                  ,
+                  ["Which colour is the first in the rainbow?","Pink", "Green" , "blue", "Red","d"]
+                  ,
+                    ["What colour are a flamingo's feathers?","Blue", "Red" , "Purple", "Pink","d"]
+                  ,
+                  ["What colour is often linked to love?","Blue", "Black" , "Green", "Red","d"]
+                  ,
+                   ["What colour is the whatsapp logo?","Blue", "Yellow" , "Red", "Green","d"]
                  ];
      
+     console.log(quiz.length);
+
+     let ques = document.createElement("div");
+     document.body.appendChild(ques);
+
+     console.log(ques);
+
         // loop for the questions          
            for(let i = 0; i < quiz.length; i++){
-               var ques = document.createElement("h3");
-               ques.innerHTML = (quiz[i]).question;
-               document.body.appendChild(ques);
-//loop for the radio button
+
+              let quest = quiz[i][0];
+
+              let ch1 = quiz[i][1];
+              let ch2 = quiz[i][2];
+              let ch3 = quiz[i][3];
+              let ch4 = quiz[i][4];
+
+              let chArr = ['A', 'B', 'C', 'D'];
+              
+              for(let l = 0; l < chArr.length; l++){
+
+              let radio = document.createElement("input");
+                 radio.setAttribute('type', 'radio');
+                 radio.setAttribute('name' ,quiz[i]);
+                 radio.setAttribute('value' ,chArr[l]);
+                 radio.innerHTML = quiz[i];
+               document.body.appendChild(radio);
+
+              }
+
+               ques.innerHTML += '<h3>' + quiz[i][0] + '</h3>'; 
+                ques.innerHTML += '<input type="radio" value = "A">' + quiz[i][1] + '</br>'; 
+                ques.innerHTML += '<input type="radio" name="choices" value = "B">' + quiz[i][2] + '</br>';                ques.innerHTML += '<input type="radio" name="choices" value = "C">' + quiz[i][3] + '</br>';                ques.innerHTML += '<input type="radio" name="choices" value = "D">' + quiz[i][4] + '</br>'; 
+
+/*loop for the radio button
                for(let x = 0; x < quiz[i].choice.length; x++){
                     let radio = document.createElement("input");
                  radio.setAttribute('type', 'radio');
@@ -190,7 +139,7 @@ console.log(test2[1].checked);
          console.log("ans");
       }
     }
- }}
+ }}*/}
    
      
                
