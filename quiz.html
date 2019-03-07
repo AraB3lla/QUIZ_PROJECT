@@ -9,22 +9,25 @@
         </title>
     </header>
     <body>
+       <form>
+       </form>
+       <input id="Sub" type="button" text="Submit">
          
        <script>
 // array containing Question, options and answer
 let score = 0;
            let quiz = [
-                  ["What colour are grape? ", "Pink", "Yellow" , "Orange", "Purple", "Purple"] 
+                  ["What colour are grapes? ", "Pink", "Yellow" , "Orange", "Purple", "Purple"] 
                  ,
-                  ["What colour are banana's?","Orange", "Pink" , "Green","Yellow","d"]
+                  ["What colour are ripe bananas?","Orange", "Pink" , "Green","Yellow","d"]
                  ,              
                   ["What colour is the sun?","Orange", "Red" , "Yellow","White","d"]
                  ,   
-                  ["What is the colour of the Ocean?","Blue", "Turquious" , "Green", "Transparent","d"]
+                  ["What is the colour of the ocean?","Blue", "Turquious" , "Green", "Transparent","d"]
                  ,
                   ["What is the colour of a ruby?"," Pink", "Brown" , "Gold", "Red ","d"]
                  ,
-                   ["What is the colour of a Jasper?","Orange", "Red" , "Black", "Green","d"]
+                   ["What is the colour of a jasper?","Orange", "Red" , "Black", "Green","d"]
                  ,
                   ["What is the colour of an emereld?","Purple", "Orange" , "Pink", "Light Green ","d"]
                   ,
@@ -79,25 +82,30 @@ let score = 0;
               let radio = document.createElement("input");
                  radio.setAttribute('type', 'radio');
                  radio.setAttribute('name' ,quiz[i]);
-                 radio.setAttribute('value' ,chArr[l]);
-                 radio.innerHTML = quiz[i];
-               document.body.appendChild(radio);
-
+                 radio.setAttribute('value' ,chArr[+ l]);
+                 radio.innerHTML = quiz[i][0];
+      
+              
               }
+              
 
                ques.innerHTML += '<h3>' + quiz[i][0] + '</h3>'; 
-                ques.innerHTML += '<input type="radio" value = "A">' + quiz[i][1] + '</br>'; 
-                ques.innerHTML += '<input type="radio" name="choices" value = "B">' + quiz[i][2] + '</br>';                ques.innerHTML += '<input type="radio" name="choices" value = "C">' + quiz[i][3] + '</br>';                ques.innerHTML += '<input type="radio" name="choices" value = "D">' + quiz[i][4] + '</br>'; 
+                ques.innerHTML += '<input type="radio" name="choices' + i +'" value = "A">' + quiz[i][1] + '</br>'; 
 
-/*loop for the radio button
-               for(let x = 0; x < quiz[i].choice.length; x++){
-                    let radio = document.createElement("input");
-                 radio.setAttribute('type', 'radio');
-                 radio.setAttribute('name' ,quiz[i].title);
-                 radio.setAttribute('value' ,x);
-                 radio.innerHTML = quiz[i].question;
-               document.body.appendChild(radio);
+                ques.innerHTML += '<input type="radio" name="choices' + i +'" value = "B">' + quiz[i][2] + '</br>';    
 
+                ques.innerHTML += '<input type="radio" name="choices' + i+'" value = "C">' + quiz[i][3] + '</br>';    
+
+                ques.innerHTML += '<input type="radio" name="choices' + i +'" value = "D">' + quiz[i][4] + '</br>'; 
+
+         function resultsTaker(){
+            for(i = 1; i < quiz.lenght; i++) {
+              let results = document.querySelector('input[name=value');
+            }
+         }
+             //variable for the calculation button
+    let submit = document.getElementById("Submit");
+/*
 //variable name of the options
                let options = document.createElement("div");
                    options.innerHTML = quiz[i].choice[x];
