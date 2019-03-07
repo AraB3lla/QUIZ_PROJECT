@@ -9,13 +9,11 @@
         </title>
     </header>
     <body>
-       <form>
-       </form>
-       <input id="Sub" type="button" text="Submit">
+       
          
        <script>
 // array containing Question, options and answer
-let score = 0;
+
            let quiz = [
                   ["What colour are grapes? ", "Pink", "Yellow" , "Orange", "Purple", "Purple"] 
                  ,
@@ -98,13 +96,26 @@ let score = 0;
 
                 ques.innerHTML += '<input type="radio" name="choices' + i +'" value = "D">' + quiz[i][4] + '</br>'; 
 
+let results = [];
+let note = [];
+let score = 0;
+
+
          function resultsTaker(){
             for(i = 1; i < quiz.lenght; i++) {
-              let results = document.querySelector('input[name=value');
-            }
+              let results = document.querySelector('input[name=value' + i + ']:checked').value;
+            };
          }
+           }
+
+         let button = document.createElement("div");
+     document.body.appendChild(button);
              //variable for the calculation button
-    let submit = document.getElementById("Submit");
+    let btn1 =  document.createElement("input");
+         btn1.setAttribute('type', 'button');
+         btn1.setAttribute('value', 'Calculate');
+         btn1.setAttribute('id', 'CalcScore');
+         document.body.appendChild(btn1);
 /*
 //variable name of the options
                let options = document.createElement("div");
@@ -147,7 +158,7 @@ console.log(test2[1].checked);
          console.log("ans");
       }
     }
- }}*/}
+ }}*/
    
      
                
