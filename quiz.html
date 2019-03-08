@@ -9,7 +9,7 @@
         </title>
     </header>
     <body>
-       
+       <div id="correctBox"></div>
          
        <script>
 
@@ -126,12 +126,20 @@ let score = 0;
                console.log(responses[i]) 
                if (responses[i].value == quiz[i][5]){
                   correct++;
-               };
-               
-            }
 
-            console.log(correct);
+               };
+            }
+           
+document.getElementById('correctBox').innerHTML = correct + " " + "correct";
+            console.log("correct");
          });
+
+
+
+
+
+
+
       
 /*
 //variable name of the options
