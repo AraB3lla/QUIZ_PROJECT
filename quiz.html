@@ -1,186 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="x-UA-Compatible" content="ie=edge">
-    <title>
+<header>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="x-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <title>
+      JS Quiz
+   </title>
+</header>
 
-        </title>
-    </header>
-    <body>
-       <div id="correctBox"></div>
-         
-       <script>
+<body style="text-align: center;">
 
-          let correct = 0;
-// array containing Question, options and answer
+   <nav class="navbar navbar-dark bg-dark">
+      <h1><a class="navbar-brand" style="color:pink;"> Colour Quiz </a></h1>
+      <form class="form-inline">
+         <input class="form-control mr-sm-2" type="search" placeholder="More Quizzes" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" style="color: pink;" type="submit">Search</button>
+      </form>
+   </nav>
+   <br><br>
 
-           let quiz = [
-                  ["What colour are grapes? ", "Pink", "Yellow" , "Orange", "Purple", "d"] 
-                 ,
-                  ["What colour are ripe bananas?","Orange", "Pink" , "Green","Yellow","d"]
-                 ,              
-                  ["What colour is the sun?","Orange", "Red" , "Yellow","White","d"]
-                 ,   
-                  ["What is the colour of the ocean?","Blue", "Turquious" , "Green", "Transparent","d"]
-                 ,
-                  ["What is the colour of a ruby?"," Pink", "Brown" , "Gold", "Red ","d"]
-                 ,
-                   ["What is the colour of a jasper?","Orange", "Red" , "Black", "Green","d"]
-                 ,
-                  ["What is the colour of an emereld?","Purple", "Orange" , "Pink", "Light Green ","d"]
-                  ,
-                   ["What is the colour of a amethyst?","Pink", "Green" , "Black", "Light Purple","d",]
-                  ,
-                  [" What is the colour of the sky?","white", "Blue" , "Black", "Transparent","d"]
-                  ,
-                  ["What is the colour of a rip lemon?","Green", "Orange" , "Pink", "Yellow ","d"]
-                  ,
-                   ["What colour strawberries?","Pink", "Yellow" , "Green", "Red","d"]
-                  ,
-                   ["Which animal has black and white stripes?","Lion", "Kangaroo" , "Hippo", "Zebra","d"]
-                  ,
-                   ["What does red and blue make when mixed together?","Orange", "Green" , "Black", "Purple","d"]
-                  ,
-                  ["What colour was Red Riding hoods coat?","Pink", "Green" , "Orange", "Red","d"]
-                  ,
-                  ["Whatcolour is elsa from Frozens hair?","Blonde", "Black" , "White", "Orange","d"]
-                  ,
-                  ["Green is made up of which two colours?","Red & blue", "Yellow & Red" , "Blue & Orange", "Yellow & Blue","d"]
-                  ,
-                  ["Which colour is the first in the rainbow?","Pink", "Green" , "blue", "Red","d"]
-                  ,
-                    ["What colour are a flamingo's feathers?","Blue", "Red" , "Purple", "Pink","d"]
-                  ,
-                  ["What colour is often linked to love?","Blue", "Black" , "Green", "Red","d"]
-                  ,
-                   ["What colour is the whatsapp logo?","Blue", "Yellow" , "Red", "Green","d"]
-                 ];
-     
-     console.log(quiz.length);
-
-     let ques = document.createElement("div");
-     document.body.appendChild(ques);
-
-     console.log(ques);
-
-        // loop for the questions          
-           for(let i = 0; i < quiz.length; i++){
-
-              let quest = quiz[i][0];
-
-              let ch1 = quiz[i][1];
-              let ch2 = quiz[i][2];
-              let ch3 = quiz[i][3];
-              let ch4 = quiz[i][4];
-
-              let chArr = ['A', 'B', 'C', 'D'];
-              
-              for(let l = 0; l < chArr.length; l++){
-
-              let radio = document.createElement("input");
-                 radio.setAttribute('type', 'radio');
-                 radio.setAttribute('name' ,quiz[i]);
-                 radio.setAttribute('value' ,chArr[+ l]);
-                 radio.innerHTML = quiz[i][0];
-              
-              }
-              
-              let ctnBlock = document.createElement('div');
-              ctnBlock.setAttribute('class', 'question-div');
-
-              let ctnNodes = '';
-               ctnNodes += '<h3>' + quiz[i][0] + '</h3>'; 
-                ctnNodes += '<input type="radio" class="answers-inputs" name="choices[' + i +'][answer]" value = "a">' + quiz[i][1] + '</br>'; 
-
-                ctnNodes += '<input type="radio" class="answers-inputs" name="choices[' + i +'][answer]" value = "b">' + quiz[i][2] + '</br>';    
-
-                ctnNodes += '<input type="radio" class="answers-inputs" name="choices[' + i+'][answer]" value = "c">' + quiz[i][3] + '</br>';    
-
-                ctnNodes += '<input type="radio" class="answers-inputs" name="choices[' + i +'][answer]" value = "d">' + quiz[i][4] + '</br>';
-
-                ctnBlock.innerHTML = ctnNodes;
-                ques.appendChild(ctnBlock);
-           }
-
-let firstResults = [];
-let note = [];
-let score = 0;
-
-             //variable for the calculation button
-    let btn1 =  document.createElement("input");
-         btn1.setAttribute('type', 'button');
-         btn1.setAttribute('value', 'Calculate');
-         btn1.setAttribute('id', 'CalcScore');
-         document.body.appendChild(btn1);
-         
-         btn1.addEventListener('click', function() {
-            let collectedAnswers = {};
-            let correct = 0
-            let responses = document.querySelectorAll(":checked")
-            console.log(responses);
-            
-            let questionContainers = document.getElementsByClassName('question-div');
-            for(let i = 0; i < questionContainers.length; i++) {
-               console.log(responses[i]) 
-               if (responses[i].value == quiz[i][5]){
-                  correct++;
-
-               };
-            }
-           
-document.getElementById('correctBox').innerHTML = correct + " " + "correct";
-            console.log("correct");
-         });
+   <div id="correctBox"></div>
 
 
+   <script>
+      // array containing Question, options and answer
+      let correct = 0;
+      let quiz = [
+         ["What colour are grapes? ", "Pink", "Yellow", "Orange", "Purple", "d"],
+         ["What colour are ripe bananas?", "Orange", "Pink", "Green", "Yellow", "d"],
+         ["What colour is the sun?", "Orange", "Red", "Yellow", "White", "d"],
+         ["What is the colour of the ocean?", "Blue", "Turquious", "Green", "Transparent", "d"],
+         ["What is the colour of a ruby?", " Pink", "Brown", "Gold", "Red ", "d"],
+         ["What is the colour of a jasper?", "Orange", "Red", "Black", "Green", "d"],
+         ["What is the colour of an emereld?", "Purple", "Orange", "Pink", "Light Green ", "d"],
+         ["What is the colour of a amethyst?", "Pink", "Green", "Black", "Light Purple", "d", ],
+         [" What is the colour of the sky?", "white", "Blue", "Black", "Transparent", "d"],
+         ["What is the colour of a rip lemon?", "Green", "Orange", "Pink", "Yellow ", "d"],
+         ["What colour strawberries?", "Pink", "Yellow", "Green", "Red", "d"],
+         ["Which animal has black and white stripes?", "Lion", "Kangaroo", "Hippo", "Zebra", "d"],
+         ["What does red and blue make when mixed together?", "Orange", "Green", "Black", "Purple", "d"],
+         ["What colour was Red Riding hoods coat?", "Pink", "Green", "Orange", "Red", "d"],
+         ["Whatcolour is elsa from Frozens hair?", "Blonde", "Black", "White", "Orange", "d"],
+         ["Green is made up of which two colours?", "Red & blue", "Yellow & Red", "Blue & Orange", "Yellow & Blue",
+            "d"
+         ],
+         ["Which colour is the first in the rainbow?", "Pink", "Green", "blue", "Red", "d"],
+         ["What colour are a flamingo's feathers?", "Blue", "Red", "Purple", "Pink", "d"],
+         ["What colour is often linked to love?", "Blue", "Black", "Green", "Red", "d"],
+         ["What colour is the whatsapp logo?", "Blue", "Yellow", "Red", "Green", "d"]
+      ];
 
+      console.log(quiz.length);
 
+      let ques = document.createElement("div");
+      document.body.appendChild(ques);
 
+      console.log(ques);
 
+      // loop for the questions          
+      for (let i = 0; i < quiz.length; i++) {
 
-      
-/*
-//variable name of the options
-               let options = document.createElement("div");
-                   options.innerHTML = quiz[i].choice[x];
-                   document.body.appendChild(options);
-       }
-       }
+         let quest = quiz[i][0];
 
-         document.getElementById("CalcScore").onclick = calc;
-//function that was meant to loop the calculation for the correct answers
-function calc(){
+         let ch1 = quiz[i][1];
+         let ch2 = quiz[i][2];
+         let ch3 = quiz[i][3];
+         let ch4 = quiz[i][4];
 
-test = document.getElementsByName("quiz[0].title");
+         let chArr = ['A', 'B', 'C', 'D'];
 
-console.log(test);
+         for (let l = 0; l < chArr.length; l++) {
 
-test2 = document.getElementsByName(quiz[19].title);
-console.log(test2);
-console.log(test2[1].checked);
+            let radio = document.createElement("input");
+            radio.setAttribute('type', 'radio');
+            radio.setAttribute('name', quiz[i]);
+            radio.setAttribute('value', chArr[+l]);
+            radio.innerHTML = quiz[i][0];
 
-   console.log(quiz[0].choice[3]);
-   console.log(quiz[0].answer);
+         }
 
+         let ctnBlock = document.createElement('div');
+         ctnBlock.setAttribute('class', 'question-div');
 
- for( let s = 0; s < quiz[s].length; s++){
- for( let r = 0; r < quiz[s].choice[r].length; r++){
-  let ans = document.getElementsByName(quiz[s].title);
+         let ctnNodes = '';
+         ctnNodes += '<h3>' + quiz[i][0] + '</h3>';
+         ctnNodes += '<input type="radio" checked="checked" class="answers-inputs" name="choices[' + i +
+            '][answer]" value = "a">' + quiz[
+               i][1] + '</br>';
 
-         if(ans.checked){
-         if(quiz[s].answer === quiz[s].choice[r].value){
-         score++;
-         console.log("correct");
-          }
-         console.log("ans");
+         ctnNodes += '<input type="radio"  class="answers-inputs" name="choices[' + i +
+            '][answer]" value = "b">' + quiz[
+               i][2] + '</br>';
+
+         ctnNodes += '<input type="radio"  class="answers-inputs" name="choices[' + i +
+            '][answer]" value = "c">' + quiz[
+               i][3] + '</br>';
+
+         ctnNodes += '<input type="radio" class="answers-inputs" name="choices[' + i +
+            '][answer]" value = "d">' + quiz[
+               i][4] + '</br>';
+
+         ctnBlock.innerHTML = ctnNodes;
+         ques.appendChild(ctnBlock);
       }
-    }
- }}*/
-   
-     
-               
-        </script>
-    </body>
+
+      let firstResults = [];
+      let note = [];
+      let score = 0;
+
+      //variable for the calculation button
+      let btn1 = document.createElement("input");
+      btn1.setAttribute('type', 'button');
+      btn1.setAttribute('value', 'Calculate');
+      btn1.setAttribute('id', 'CalcScore');
+      document.body.appendChild(btn1);
+
+      btn1.addEventListener('click', function () {
+         let collectedAnswers = {};
+         let correct = 0
+         let responses = document.querySelectorAll(":checked")
+         console.log(responses);
+
+         let questionContainers = document.getElementsByClassName('question-div');
+         for (let i = 0; i < questionContainers.length; i++) {
+            console.log(responses[i])
+            if (responses[i].value == quiz[i][5]) {
+               correct++;
+
+            };
+         }
+
+         document.getElementById('correctBox').innerHTML = correct + " " + "correct";
+         console.log("correct");
+      });
+   </script>
+</body>
+
 </html>
